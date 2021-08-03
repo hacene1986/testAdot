@@ -1,0 +1,219 @@
+body,
+body * {
+  padding: 0;
+  margin: 0;
+  color: #ffffff;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.wrap {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  height: 667px;
+  width: 375px;
+  overflow: hidden;
+}
+
+/* Top Part */
+.top {
+  height: 50%;
+  background-color: #4facdb;
+  position: relative;
+  padding: 8px;
+}
+
+.logo {
+  object-fit: contain;
+  margin: 39px auto 0;
+  display: flex;
+}
+/*************************** Annimation logo ***************/
+.logo {
+  animation-name: logo-top;
+  animation-duration: 0.5s;
+  animation-fill-mode: both;
+  animation-delay: 2s;
+}
+
+@keyframes logo-top {
+  from {
+    transform: translateX(0) translateY(0) scale(1);
+  }
+  to {
+    transform: translateX(-150px) translateY(-50px) scale(0.6);
+  }
+}
+
+.annimation {
+  font-weight: bold;
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.annimation.annim1 {
+  margin-top: 70px;
+}
+
+.separation {
+  margin-bottom: 20px;
+}
+
+.annimation p {
+  text-align: center;
+  display: block;
+}
+
+.light-text {
+  font-weight: 600;
+  font-size: 1rem;
+}
+.medium-text {
+  font-size: 2.2rem;
+  letter-spacing: 0.1rem;
+}
+
+.spacing-letter {
+  letter-spacing: 0.1rem;
+}
+
+.big-text {
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+  font-size: 3rem;
+}
+
+.annimation.hidden {
+  display: none;
+}
+
+.mini-text {
+  font-size: 0.7rem;
+  text-align: left;
+  bottom: 10px;
+  position: absolute;
+}
+
+.hide-mini-text {
+  /*opacity: 0;*/
+  display: none;
+}
+
+.show-mini-text {
+  animation-name: fade-in-element;
+  animation-duration: 0.9s;
+  animation-fill-mode: both;
+}
+
+
+.btn {
+  width: 250px;
+  height: 40px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0);
+  border: 1px solid #ffffffc2;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1rem;
+  margin-top: 20px;
+}
+
+/* Bottom part */
+
+.Botside {
+  height: 50%;
+  width: 100%;
+  position: relative;
+}
+
+.Botside .map {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 2;
+  transform: translateY(100%);
+}
+/******************************************* Annimation MAP *********************************************/
+.show-map {
+  animation-name: show-map;
+  animation-delay: 0.5s;
+  animation-duration: 1.5s;
+  animation-fill-mode: both;
+}
+
+@keyframes show-map {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.Botside .boucle {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  position: absolute;
+}
+
+@keyframes reveal-title {
+  from {
+    transform: translateX(150px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes hide-title {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes fade-in-element {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+
+
+/* Animation ligne par ligne */
+
+.visible  {
+  opacity: 0;
+  animation: reveal-title 600ms ease forwards;
+}
+
+p {
+  opacity: 0;
+  animation: fade-in-element 600ms ease forwards;
+}
+
+p:nth-child(3) {
+  animation-delay: 400ms;
+}
+p:nth-child(4) {
+  animation-delay: 500ms;
+}
